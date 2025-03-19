@@ -2076,10 +2076,10 @@ p {
 
 /* Main stats styling */
 .stats-main {
-  margin-bottom: 30px !important;
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin-bottom: 30px;
 }
 
 .stats-main .col-md-6 {
@@ -2310,13 +2310,16 @@ p {
   
   /* Milwaukee section container fix - ensures proper stacking */
     .milwaukee-stats {
-    position: absolute !important; /* This is crucial - overrides the relative positioning */
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
-    background-color: #fff;
-  }
+  background: linear-gradient(to bottom, #fff 0%, #f5f7f9 100%);
+  border-radius: 12px;
+  padding: 25px 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  margin-top: 30px;
+  border-top: 5px solid #37C10E;
+  position: relative; /* Changed from absolute to relative */
+  overflow: hidden;
+}
+
   
   /* Milwaukee Numbers Mobile Styling - proper sizing and spacing */
   .milwaukee-stats .big-number {
@@ -2410,7 +2413,11 @@ p {
   }
   
   .stats-details {
-    flex-wrap: wrap;
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
   }
   
   .stats-details .col {
@@ -2438,6 +2445,7 @@ p {
   .stats-main .col-md-6 {
     margin-bottom: 20px;
   }
+ 
 }
 
 /* Fix for dollar signs and number alignment */
