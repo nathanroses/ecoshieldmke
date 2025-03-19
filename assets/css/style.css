@@ -2448,6 +2448,51 @@ p {
  
 }
 
+/* Fix for header alignment */
+@media (min-width: 992px) {
+    .text-lg-right {
+        text-align: right !important;
+    }
+}
+
+/* Fix for stats container */
+.milwaukee-stats {
+    background: white;
+    border-radius: 12px;
+    padding: 25px 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    margin-top: 30px;
+    border-top: 5px solid #37C10E;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fix for big numbers to prevent overflow */
+.big-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #37C10E;
+    width: 100%;
+    text-align: center;
+    overflow: visible;
+    white-space: nowrap;
+}
+
+/* Mobile spacing fixes */
+@media (max-width: 767px) {
+    .milwaukee-stats {
+        padding: 15px 10px;
+    }
+    
+    .big-number {
+        font-size: 1.8rem;
+    }
+    
+    .stats-value {
+        font-size: 1rem;
+    }
+}
+
 /* Fix for dollar signs and number alignment */
 .milwaukee-stats .big-number,
 .milwaukee-stats .stats-value {
