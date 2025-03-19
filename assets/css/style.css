@@ -2310,13 +2310,10 @@ p {
   
   /* Milwaukee section container fix - ensures proper stacking */
   .milwaukee-stats {
-    display: block;
-    width: 100%;
-    margin-bottom: 40px; /* Create more space after this section */
-    padding: 15px;
-    position: relative;
-    clear: both;
-  }
+  position: absolute;
+  z-index: 2;
+  background: white;
+}
   
   /* Milwaukee Numbers Mobile Styling - proper sizing and spacing */
   .milwaukee-stats .big-number {
@@ -2388,10 +2385,10 @@ p {
   }
   
   /* Fix "Made For" section to ensure it displays below Milwaukee section */
-  .made-for-section {
-    margin-top: 60px;
-    clear: both;
+    .made-for-section {
+    margin-top: 550px !important;
     position: relative;
+    z-index: 1;
   }
 }
   
