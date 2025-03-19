@@ -2309,11 +2309,14 @@ p {
   }
   
   /* Milwaukee section container fix - ensures proper stacking */
-  .milwaukee-stats {
-  position: absolute;
-  z-index: 2;
-  background: white;
-}
+    .milwaukee-stats {
+    position: absolute !important; /* This is crucial - overrides the relative positioning */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: #fff;
+  }
   
   /* Milwaukee Numbers Mobile Styling - proper sizing and spacing */
   .milwaukee-stats .big-number {
@@ -2386,9 +2389,8 @@ p {
   
   /* Fix "Made For" section to ensure it displays below Milwaukee section */
     .made-for-section {
-    margin-top: 550px !important;
     position: relative;
-    z-index: 1;
+    margin-top: 450px !important; /* Large value to ensure complete separation */
   }
 }
   
