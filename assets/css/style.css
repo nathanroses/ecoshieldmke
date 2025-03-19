@@ -2291,31 +2291,109 @@ p {
 
 /* Mobile Responsiveness Improvements */
 @media (max-width: 767px) {
-  /* THIS IS THE KEY FIX FOR MILWAUKEE TITLE ON MOBILE */
+  /* Clear fixes to prevent overlap between sections */
+  .section {
+    clear: both;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  
+  /* Fix for Milwaukee title on mobile - ensures proper centering */
   .col-lg-6:last-child .section-title .title {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center !important;
     font-size: 2.5rem; /* Slightly smaller on mobile */
+    margin-bottom: 30px;
   }
   
-  /* Milwaukee Numbers Mobile Styling */
+  /* Milwaukee section container fix - ensures proper stacking */
+  .milwaukee-stats {
+    display: block;
+    width: 100%;
+    margin-bottom: 40px; /* Create more space after this section */
+    padding: 15px;
+    position: relative;
+    clear: both;
+  }
+  
+  /* Milwaukee Numbers Mobile Styling - proper sizing and spacing */
   .milwaukee-stats .big-number {
     font-size: 2.8rem; /* Larger numbers on mobile */
     text-align: center;
     width: 100%;
+    display: block;
+    margin-bottom: 5px;
   }
   
+  /* Force proper stacking for the stats main container */
   .milwaukee-stats .stats-main {
     flex-direction: column;
+    display: flex;
+    width: 100%;
+    margin-bottom: 25px;
   }
   
+  /* Force each stat column to full width */
   .milwaukee-stats .stats-main .col-md-6 {
     flex: 0 0 100%;
     max-width: 100%;
     margin-bottom: 20px;
+    padding: 0 10px;
   }
+  
+  /* Make sure both lines are centered and stacked */
+  .milwaukee-text,
+  .numbers-text {
+    display: block;
+    width: 100%;
+    text-align: center !important;
+    font-size: 1rem;
+  }
+  
+  /* Enforce center alignment for section titles */
+  .section-title.text-center,
+  .col-lg-6 .section-title.text-center {
+    text-align: center !important;
+    margin-bottom: 20px;
+  }
+  
+  /* Fix detail stats to use grid layout instead of flex */
+  .stats-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  /* Style each detail column properly */
+  .stats-details .col {
+    padding: 10px 5px;
+    margin: 0;
+    text-align: center;
+    border-right: none;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+  
+  /* Apply right border to create grid look */
+  .stats-details .col:nth-child(odd) {
+    border-right: 1px solid rgba(0,0,0,0.1);
+  }
+  
+  /* Remove bottom border from last row */
+  .stats-details .col:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
+  
+  /* Fix "Made For" section to ensure it displays below Milwaukee section */
+  .made-for-section {
+    margin-top: 60px;
+    clear: both;
+    position: relative;
+  }
+}
   
   /* Make sure both lines are centered and stacked */
   .milwaukee-text,
