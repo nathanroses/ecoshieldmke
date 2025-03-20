@@ -33,6 +33,154 @@
     <!--====== Style css ======-->
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <!-- Additional custom styles to fix alignment issues -->
+    <style>
+        /* Fix for Milwaukee stats section */
+        .milwaukee-stats {
+            background: white;
+            border-radius: 12px;
+            padding: 25px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-top: 30px;
+            border-top: 5px solid #37C10E;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Main stats styling */
+        .stats-main {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        
+        .stats-main .col-md-6 {
+            flex: 0 0 48%;
+            max-width: 48%;
+            padding: 0 10px;
+        }
+        
+        .stats-main h5 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+            color: #333;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        
+        .big-number {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: #37C10E;
+            line-height: 1.1;
+            text-align: center;
+            white-space: nowrap;
+            overflow: visible;
+        }
+        
+        /* Fix for the revenue number */
+        .stats-main .col-md-6:nth-child(2) .big-number {
+            font-size: 2.2rem;
+            letter-spacing: -1.5px;
+        }
+        
+        /* Details stats styling */
+        .stats-details {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+            margin-top: 25px;
+        }
+        
+        .stats-details .col {
+            flex: 1;
+            text-align: center;
+            padding: 15px 5px;
+            position: relative;
+            border-right: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .stats-details .col:last-child {
+            border-right: none;
+        }
+        
+        .stats-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #555;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            white-space: normal;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .stats-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #37C10E;
+            white-space: nowrap;
+            overflow: visible;
+        }
+        
+        /* Mobile responsive fixes */
+        @media (max-width: 767px) {
+            .section-title.text-lg-right,
+            .col-lg-6:last-child .section-title .title {
+                text-align: center !important;
+            }
+            
+            .milwaukee-stats {
+                padding: 15px 10px;
+                margin-top: 50px;
+                margin-bottom: 30px;
+            }
+            
+            .stats-main {
+                flex-direction: column;
+            }
+            
+            .stats-main .col-md-6 {
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+            
+            .big-number {
+                font-size: 2.2rem;
+            }
+            
+            .stats-details {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            
+            .stats-details .col {
+                border-right: none;
+                border-bottom: 1px solid rgba(0,0,0,0.1);
+            }
+            
+            .stats-details .col:nth-child(odd) {
+                border-right: 1px solid rgba(0,0,0,0.1);
+            }
+            
+            .stats-details .col:nth-last-child(-n+2) {
+                border-bottom: none;
+            }
+            
+            /* Fix for "Made For" section on mobile */
+            #service .order-2 {
+                margin-top: 30px;
+            }
+        }
+    </style>
 
 </head>
 
@@ -115,133 +263,139 @@
 
     <!--====== HEADER PART ENDS ======-->
 
- <!--====== SERVICES PART START ======-->
-<section id="service" class="services-area">
-    <div class="container">
-        <!-- Section headers with proper alignment -->
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="section-title pb-10">
-                    <h4 class="title">Made For</h4>
-                    <p class="text">Everyone who is willing to put the work in. We give you the skills and tools to achieve, its up to you to get there.</p>
+    <!--====== SERVICES PART START ======-->
+    <section id="service" class="services-area">
+        <div class="container">
+            <!-- Section headers with improved alignment -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="section-title pb-10">
+                        <h4 class="title">Made For</h4>
+                        <p class="text">Everyone who is willing to put the work in. We give you the skills and tools to achieve, its up to you to get there.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="section-title pb-10 text-lg-right"> <!-- Force right alignment -->
-                    <h4 class="title">MILWAUKEE<br>2024 NUMBERS</h4>
+                <div class="col-lg-6">
+                    <div class="section-title pb-10 text-lg-right">
+                        <h4 class="title">MILWAUKEE<br>2024 NUMBERS</h4>
+                    </div>
                 </div>
-            </div>
-        </div> <!-- row -->
-        <div class="row">
-            <div class="col-lg-6 order-2 order-lg-1">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="services-content mt-40 d-sm-flex">
-                            <div class="services-icon">
-                                <i class="lni-bolt"></i>
-                            </div>
-                            <div class="services-content media-body">
-                                <h4 class="services-title">New Skills</h4>
-                                <p class="text">Communication, Resiliency, Leadership, Adaptability</p>
-                            </div>
-                        </div> <!-- services content -->
-                    </div>
-                    <div class="col-md-6">
-                        <div class="services-content mt-40 d-sm-flex">
-                            <div class="services-icon">
-                                <i class="lni-bar-chart"></i>
-                            </div>
-                            <div class="services-content media-body">
-                                <h4 class="services-title">Performance </h4>
-                                <p class="text">Sell More, Get Paid More</p>
-                            </div>
-                        </div> <!-- services content -->
-                    </div>
-                    <div class="col-md-6">
-                        <div class="services-content mt-40 d-sm-flex">
-                            <div class="services-icon">
-                                <i class="lni-brush"></i>
-                            </div>
-                            <div class="services-content media-body">
-                                <h4 class="services-title">Incentives</h4>
-                                <p class="text">Trips, Trucks, iPads, Swag, Money</p>
-                            </div>
-                        </div> <!-- services content -->
-                    </div>
-                    <div class="col-md-6">
-                        <div class="services-content mt-40 d-sm-flex">
-                            <div class="services-icon">
-                                <i class="lni-bulb"></i>
-                            </div>
-                            <div class="services-content media-body">
-                                <h4 class="services-title">Growth</h4>
-                                <p class="text">Take your life to new heights</p>
-                            </div>
-                        </div> <!-- services content -->
-                    </div>
-                </div> <!-- row -->
-            </div> <!-- col-6 -->
+            </div> <!-- row -->
             
-            <div class="col-lg-6 order-1 order-lg-2">
-             <div class="milwaukee-stats">
-              <!-- Main stats row -->
-             <div class="row stats-main">
-               <div class="col-md-6 text-center">
-                <h5>ACCOUNTS SERVICED</h5>
-                <div class="big-number">5,761</div>
-              </div>
-               <div class="col-md-6 text-center">
-                 <h5>SERVICED REVENUE</h5>
-                <div class="big-number">$5,400,000</div>
-             </div>
-        </div>
-                    
-                          <!-- Detail stats row -->
-             <div class="row stats-details">
-            <div class="col text-center">
-                <div class="stats-label">OVERALL PRA</div>
-                <div class="stats-value">$214,773</div>
-            </div>
-            <div class="col text-center">
-                <div class="stats-label">EXP PRA</div>
-                <div class="stats-value">$298,129</div>
-            </div>
-            <div class="col text-center">
-                <div class="stats-label">ROOKIE PRA</div>
-                <div class="stats-value">$149,278</div>
-            </div>
-            <div class="col text-center">
-                <div class="stats-label">INITIAL PRICE</div>
-                <div class="stats-value">$180</div>
-            </div>
-            <div class="col text-center">
-                <div class="stats-label">CVA</div>
-                <div class="stats-value">$937</div>
-            </div>
-          </div>
-       </div>
-    </div>
-</section>
-<!--====== SERVICES PART ENDS ======-->
-    
-    <!--====== CALL TO ACTION PART START ======-->
-
-    <section id="call-to-action" class="call-to-action">
-    <div class="call-action-image">
-        <img src="assets/images/call-to-action.png" alt="call-to-action">
-    </div>
-    
-    <div class="container-fluid">
-        <div class="row justify-content-end">
-            <div class="col-lg-6">
-                <div class="call-action-content text-center">
-                    <h2 class="call-title">Join our Team</h2>
-                    <p class="text">You let us know when your ready. Contact us below </br> for more Information</p>
-                    <div class="call-newsletter">
+            <div class="row">
+                <!-- Skills section -->
+                <div class="col-lg-6 order-2 order-lg-1">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="services-content mt-40 d-sm-flex">
+                                <div class="services-icon">
+                                    <i class="lni-bolt"></i>
+                                </div>
+                                <div class="services-content media-body">
+                                    <h4 class="services-title">New Skills</h4>
+                                    <p class="text">Communication, Resiliency, Leadership, Adaptability</p>
+                                </div>
+                            </div> <!-- services content -->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="services-content mt-40 d-sm-flex">
+                                <div class="services-icon">
+                                    <i class="lni-bar-chart"></i>
+                                </div>
+                                <div class="services-content media-body">
+                                    <h4 class="services-title">Performance </h4>
+                                    <p class="text">Sell More, Get Paid More</p>
+                                </div>
+                            </div> <!-- services content -->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="services-content mt-40 d-sm-flex">
+                                <div class="services-icon">
+                                    <i class="lni-brush"></i>
+                                </div>
+                                <div class="services-content media-body">
+                                    <h4 class="services-title">Incentives</h4>
+                                    <p class="text">Trips, Trucks, iPads, Swag, Money</p>
+                                </div>
+                            </div> <!-- services content -->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="services-content mt-40 d-sm-flex">
+                                <div class="services-icon">
+                                    <i class="lni-bulb"></i>
+                                </div>
+                                <div class="services-content media-body">
+                                    <h4 class="services-title">Growth</h4>
+                                    <p class="text">Take your life to new heights</p>
+                                </div>
+                            </div> <!-- services content -->
+                        </div>
+                    </div> <!-- row -->
+                </div> <!-- col-6 -->
+                
+                <!-- Milwaukee stats section - properly structured -->
+                <div class="col-lg-6 order-1 order-lg-2">
+                    <div class="milwaukee-stats">
+                        <!-- Main stats row -->
+                        <div class="stats-main">
+                            <div class="col-md-6">
+                                <h5>ACCOUNTS SERVICED</h5>
+                                <div class="big-number">5,761</div>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>SERVICED REVENUE</h5>
+                                <div class="big-number">$5,400,000</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Detail stats row -->
+                        <div class="stats-details">
+                            <div class="col">
+                                <div class="stats-label">OVERALL PRA</div>
+                                <div class="stats-value">$214,773</div>
+                            </div>
+                            <div class="col">
+                                <div class="stats-label">EXP PRA</div>
+                                <div class="stats-value">$298,129</div>
+                            </div>
+                            <div class="col">
+                                <div class="stats-label">ROOKIE PRA</div>
+                                <div class="stats-value">$149,278</div>
+                            </div>
+                            <div class="col">
+                                <div class="stats-label">INITIAL PRICE</div>
+                                <div class="stats-value">$180</div>
+                            </div>
+                            <div class="col">
+                                <div class="stats-label">CVA</div>
+                                <div class="stats-value">$937</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div> <!-- row -->
         </div> <!-- container -->
+    </section>
+    <!--====== SERVICES PART ENDS ======-->
+    
+    <!--====== CALL TO ACTION PART START ======-->
+
+    <section id="call-to-action" class="call-to-action">
+        <div class="call-action-image">
+            <img src="assets/images/call-to-action.png" alt="call-to-action">
+        </div>
+        
+        <div class="container-fluid">
+            <div class="row justify-content-end">
+                <div class="col-lg-6">
+                    <div class="call-action-content text-center">
+                        <h2 class="call-title">Join our Team</h2>
+                        <p class="text">You let us know when your ready. Contact us below </br> for more Information</p>
+                        <div class="call-newsletter">
+                        </div>
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div>
     </section>
     <!--====== CALL TO ACTION PART ENDS ======-->
 
@@ -250,147 +404,136 @@
     <!--====== TESTIMONIAL THREE PART START ======-->
 
     <section id="testimonial" class="testimonial-area">
-    <div class="container">            
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-                <div class="section-title pb-10">
-                    <h4 class="title">Testimonial</h4>
-                    <p class="text">
-                        <span class="testimonial-intro">See why other parents</span> 
-                        <span class="testimonial-emphasis">agree that ecoshield is a great place to work.</span> 
-                        <span class="testimonial-call-to-action">Join our A+ Team</span>
-                    </p>
-                </div> <!-- section title -->
+        <div class="container">            
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="section-title pb-10">
+                        <h4 class="title">Testimonial</h4>
+                        <p class="text">
+                            <span class="testimonial-intro">See why other parents</span> 
+                            <span class="testimonial-emphasis">agree that ecoshield is a great place to work.</span> 
+                            <span class="testimonial-call-to-action">Join our A+ Team</span>
+                        </p>
+                    </div> <!-- section title -->
+                </div>
             </div>
-        </div>
-    
+        
             <!-- Embed responsive YouTube video -->
             <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/iEIh2_uj0x0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="col-lg-8">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/iEIh2_uj0x0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
                 </div>
-            </div>
-        </div> <!-- row for video -->
+            </div> <!-- row for video -->
 
-    </div> <!-- container -->
-</section>
+        </div> <!-- container -->
+    </section>
     
-    <style>
-        @media (max-width: 767px) {
-            .video-wrapper {
-                padding: 10px; /* Smaller padding for mobile devices */
-            }
-        }
-    </style>
-    
-    
-    
-
     <!--====== TESTIMONIAL THREE PART ENDS ======-->
     
-  <!--====== CLIENT LOGO PART START ======-->
-<section class="client-logo-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-6">
-                <div class="single-client mt-30 text-center">
-                    <img src="assets/images/client_logo_02.png" alt="Logo" class="uniform-logo">
-                </div> <!-- single client -->
-            </div>
-            <div class="col-md-3 col-6">
-                <div class="single-client mt-30 text-center">
-                    <img src="assets/images/client_logo_03.png" alt="Logo" class="uniform-logo">
-                </div> <!-- single client -->
-            </div>
-            <div class="col-md-3 col-6">
-                <div class="single-client mt-30 text-center">
-                    <img src="assets/images/client_logo_01.png" alt="Logo" class="uniform-logo">
-                </div> <!-- single client -->
-            </div>
-            <div class="col-md-3 col-6">
-                <div class="single-client mt-30 text-center">
-                    <img src="assets/images/client_logo_04.png" alt="Logo" class="uniform-logo">
-                </div> <!-- single client -->
-            </div>
-        </div> <!-- row -->
-    </div> <!-- container -->
-</section>
-<!--====== CLIENT LOGO PART ENDS ======-->
+    <!--====== CLIENT LOGO PART START ======-->
+    <section class="client-logo-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6">
+                    <div class="single-client mt-30 text-center">
+                        <img src="assets/images/client_logo_02.png" alt="Logo" class="uniform-logo">
+                    </div> <!-- single client -->
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="single-client mt-30 text-center">
+                        <img src="assets/images/client_logo_03.png" alt="Logo" class="uniform-logo">
+                    </div> <!-- single client -->
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="single-client mt-30 text-center">
+                        <img src="assets/images/client_logo_01.png" alt="Logo" class="uniform-logo">
+                    </div> <!-- single client -->
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="single-client mt-30 text-center">
+                        <img src="assets/images/client_logo_04.png" alt="Logo" class="uniform-logo">
+                    </div> <!-- single client -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+    <!--====== CLIENT LOGO PART ENDS ======-->
     
-<!--====== CONTACT PART START ======-->
+    <!--====== CONTACT PART START ======-->
 
-<section id="contact" class="contact-area">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-                <div class="section-title pb-10">
-                    <h4 class="title">Get In touch</h4>
-                    <p class="text">Stop wasting time. Become the great sales person you know you can be. Send us a message today</p>
-                </div> <!-- section title -->
-            </div>
-        </div> <!-- row -->
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="contact-form">
-                    <form action="https://api.web3forms.com/submit" method="POST" class="needs-validation" novalidate>
-        
-                        <input type="hidden" name="access_key" value="cd495b2e-b0fb-44d7-9897-6a3a6ab3cd3c">
-                        <div class="form-row">
-                            <div class="col-md-6 mb-3">
-                                <input type="text" name="first_name" class="form-control" placeholder="First Name" required>
+    <section id="contact" class="contact-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="section-title pb-10">
+                        <h4 class="title">Get In touch</h4>
+                        <p class="text">Stop wasting time. Become the great sales person you know you can be. Send us a message today</p>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-form">
+                        <form action="https://api.web3forms.com/submit" method="POST" class="needs-validation" novalidate>
+            
+                            <input type="hidden" name="access_key" value="cd495b2e-b0fb-44d7-9897-6a3a6ab3cd3c">
+                            <div class="form-row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" name="first_name" class="form-control" placeholder="First Name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" name="last_name" class="form-control" placeholder="Last Name" required>
+                                </div>
                             </div>
-                            <div class="col-md-6 mb-3">
-                                <input type="text" name="last_name" class="form-control" placeholder="Last Name" required>
+                            <div class="form-row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="email" name="email" class="form-control" placeholder="Email" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" name="phone" class="form-control" placeholder="Phone" required>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-md-6 mb-3">
-                                <input type="email" name="email" class="form-control" placeholder="Email" required>
+                            <div class="form-row">
+                                <div class="col-md-4 mb-3">
+                                    <select name="education_level" class="form-control" required>
+                                        <option value="" selected disabled>Education Level</option>
+                                        <option value="High School">High School</option>
+                                        <option value="Associate Degree">Associate Degree</option>
+                                        <option value="Bachelor's Degree">Bachelor's Degree</option>
+                                        <option value="Master's Degree">Master's Degree</option>
+                                        <option value="Doctorate">Doctorate</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <select name="sales_experience" class="form-control" required>
+                                        <option value="" selected disabled>Sales Experience</option>
+                                        <option value="None">None</option>
+                                        <option value="1-2 years">1-2 years</option>
+                                        <option value="3-5 years">3-5 years</option>
+                                        <option value="5+ years">5+ years</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <input type="text" name="recruiter" class="form-control" placeholder="Recruiter" required>
+                                </div>
                             </div>
-                            <div class="col-md-6 mb-3">
-                                <input type="text" name="phone" class="form-control" placeholder="Phone" required>
+                            <div class="form-group">
+                                <textarea name="message" class="form-control" placeholder="Your Message" rows="5" required></textarea>
                             </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-md-4 mb-3">
-                                <select name="education_level" class="form-control" required>
-                                    <option value="" selected disabled>Education Level</option>
-                                    <option value="High School">High School</option>
-                                    <option value="Associate Degree">Associate Degree</option>
-                                    <option value="Bachelor's Degree">Bachelor's Degree</option>
-                                    <option value="Master's Degree">Master's Degree</option>
-                                    <option value="Doctorate">Doctorate</option>
-                                </select>
+                            <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                            <div class="form-group text-center mt-4">
+                                <button type="submit" class="main-btn">Submit Form</button>
                             </div>
-                            <div class="col-md-4 mb-3">
-                                <select name="sales_experience" class="form-control" required>
-                                    <option value="" selected disabled>Sales Experience</option>
-                                    <option value="None">None</option>
-                                    <option value="1-2 years">1-2 years</option>
-                                    <option value="3-5 years">3-5 years</option>
-                                    <option value="5+ years">5+ years</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <input type="text" name="recruiter" class="form-control" placeholder="Recruiter" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="message" class="form-control" placeholder="Your Message" rows="5" required></textarea>
-                        </div>
-                        <input type="hidden" name="redirect" value="https://web3forms.com/success">
-                        <div class="form-group text-center mt-4">
-                            <button type="submit" class="btn btn-success px-5 py-3">Submit Form</button>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div> <!-- container -->
-</section>
+        </div> <!-- container -->
+    </section>
 
-<!--====== CONTACT PART ENDS ======-->
+    <!--====== CONTACT PART ENDS ======-->
 
     <!--====== FOOTER PART START ======-->
 
@@ -455,7 +598,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="copyright text-center">
-                            <p class="text">  Powered by <a el="nofollow" href="https://rosedevelopment.org">Rose Development</a></p>
+                            <p class="text">Powered by <a rel="nofollow" href="https://rosedevelopment.org">Rose Development</a></p>
                         </div>
                     </div>
                 </div> <!-- row -->
@@ -470,14 +613,6 @@
     <a class="back-to-top" href="#"><i class="lni-chevron-up"></i></a>
 
     <!--====== BACK TO TOP PART ENDS ======-->
-
-
-
-
-
-
-
-
 
     <!--====== jquery js ======-->
     <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
